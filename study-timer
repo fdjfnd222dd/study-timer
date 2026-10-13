@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Launcher: runs the timer from anywhere and detaches, so the terminal is
+# free again right away. Resolves symlinks so a short alias (e.g. `t`)
+# still finds study_timer.py next to the real script.
+here="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
+nohup python3 "$here/study_timer.py" >/dev/null 2>&1 &
+disown

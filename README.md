@@ -45,6 +45,12 @@ cd study-timer
 python3 study_timer.py
 ```
 
+To launch it with a short command from any terminal (needs `~/.local/bin` on your PATH):
+
+```bash
+ln -s "$PWD/study-timer" ~/.local/bin/t   # then just type: t
+```
+
 Notifications use `notify-send` if it is installed and are skipped silently if not.
 
 ## Files
@@ -52,6 +58,7 @@ Notifications use `notify-send` if it is installed and are skipped silently if n
 | File | Purpose |
 |---|---|
 | `study_timer.py` | The GTK window |
+| `study-timer` | Launcher script that opens the window and frees the terminal |
 | `timer_core.py` | Timer logic with no GUI, so it can be tested |
 | `tests/test_core.py` | Unit tests for the logic |
 
